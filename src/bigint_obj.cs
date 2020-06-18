@@ -30,6 +30,16 @@ function BigInt(%a, %b)
 	return %this;
 }
 
+function BigInt::clone(%this)
+{
+	return BigInt(%this.toString());
+}
+
+function BigInt::setValue(%this, %v)
+{
+	bigint__setValue(%this.value, %v.value);
+	return %this;
+}
 
 // Clean up the mess when done
 function BigInt::onRemove(%this)
