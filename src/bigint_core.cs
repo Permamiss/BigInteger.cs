@@ -454,6 +454,7 @@ function bigint__setValue(%a, %b)
 	{
 		%a.set(%i, %b.get(%i));
 	}
+	%a.sign = %b.sign;
 }
 
 // Convert an array into a string
