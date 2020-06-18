@@ -418,6 +418,18 @@ function bigint__parseValue(%v)
 	return %r;
 }
 
+// Set this array's values to match another BigInt's array values
+function bigint__setValue(%a, %b)
+{
+	%b_l = %b.length();
+
+	%a.resize(%b_l);
+	for (%i = 0; %i < %b_l; %i++)
+	{
+		%a.set(%i, %b.get(%i));
+	}
+}
+
 // Convert an array into a string
 function bigint__toString(%v)
 {
